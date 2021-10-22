@@ -1,3 +1,17 @@
+Vue.component('app-car', {
+    data: function () {
+        return {
+            cars: [
+                {model: "BMW"},
+                {model: "Audi"},
+                {model: "Mersedes-Benz"},
+                {model: "Ford"},
+            ]
+        }
+    },
+    template: '<div><div class="car" v-for="car in cars"><p>{{ car.model }}</p></div></div>'
+})
+
 Vue.filter("capatilize", function(value){
     if (!value) return "";
     value = value.toString();
@@ -6,22 +20,23 @@ Vue.filter("capatilize", function(value){
 
 new Vue({
     el: '#app',
+    components: {
+        'app-car3': {}
+    },
     data: {
-        cars: [
-            {model: "BMW"},
-            {model: "Audi", speed: 240.01},
-            {model: "Mersedes-Benz", speed: 350.04},
-            {model: "Ford", speed: 165},
-        ],
         show: true,
         message: "Hello world, hello"
     },
     methods: {
-
     },
     filters: {
         lowercase (value) {
             return value.toLowerCase();
         }
     }
+});
+
+new Vue({
+    el: '#app2',
+    data: {}
 });

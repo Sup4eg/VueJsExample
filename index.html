@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Изучение vue.js</title>
 </head>
 <body>
@@ -11,15 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <div id="app">
-        <button v-on:click="show=!show">Скрыть / Показать</button>
-        <p v-if="show">Текст, который может стать невидимым</p>
-        <p v-else>{{message | lowercase | capatilize}}</p>
+        <app-car></app-car>
+        <app-car></app-car>
+    </div>
 
-
-        <ul>
-            <li v-for="(car, i) in cars" :key="car.model">{{i + 1}} - {{car.model}}, скорость: {{car.speed}}</li>
-        </ul>
-
+    <div id="app2">
+        <app-car></app-car>
     </div>
 
     <script src="js/main.js"></script>
